@@ -14,10 +14,13 @@
 </script>
 </head>
 <body>
+	<!-- 상단 -->
     <div th:replace="main/header.html"></div>
 	<div th:replace="main/article.html"></div>
 	<div th:replace="main/nav.html"></div>
 
+
+	<!-- 개발 진행 -->
 
         <div class="storeMain">
 
@@ -50,7 +53,7 @@
             </div>
 			
 			
-           	<!-- kakao - localhost view -->
+           	<!-- kakaoMap view -->
 	        <div id="map" style="width:70%;height:600px;margin-left:15%;margin-bottom:7%"></div> 
             <div class="storeMap" align="center">
             <div th:each="store : ${storeList}">

@@ -128,18 +128,25 @@
 				<th width="150px">배송비</th>
 				<th width="200px">선택</th>
 			</tr>
-			<form>
-				<tr>
-					<td align="center"> 1 </td>
-					<td> 보만 커피메이커</td>
-					<td align="center">1</td>
-					<td align="center">130000</td>
-					<td align="center">130000</td>
+			<form id="cartSubmitForm">
+				<tr class="myTr2" th:each="cart : ${ cartList }">
+					<td align="center"><input type="checkbox" name="cartBox"
+						th:value="${cart.cartProCode}"></td>
+					<td th:text="${cart.product.proName}"></td>
+					<td th:text="${cart.count}" align="center"></td>
+					<td th:text="${cart.product.proPrice}" align="center"></td>
+					<td th:text="${cart.count * cart.product.proPrice}" align="center"></td>
+					<input type="hidden" name="cartProCode"
+						th:value="${cart.cartProCode}">
 					<td align="center">무료배송</td>
 					<td align="center">
-						<button type="button" class="my_border_Btn">X
+						<button type="button" class="my_border_Btn"
+							th:code="${cart.cartProCode}"
+							th:onclick="singleDelete(this.getAttribute('code'))">X
 							삭제</button>
-						<button type="button" class="my_color_Btn">주문
+						<button type="button" class="my_color_Btn"
+							th:code="${cart.cartProCode}"
+							th:onclick="singleOrder(this.getAttribute('code'))">주문
 							하기</button>
 					</td>
 				</tr>
@@ -154,8 +161,8 @@
 		<div class="mybasket_total">
 			<h5>[기본배송]</h5>
 			<h5>
-				상품구매금액 <span>130000</span> + 배송비 0 (무료) = 합계 : <span
-					style="font-size: larger;" id="totalSum" >130000</span>
+				상품구매금액 <span th:text="${cartSum}"></span> + 배송비 0 (무료) = 합계 : <span
+					style="font-size: larger;" id="totalSum" th:text="${cartSum}"></span>
 			</h5>
 		</div>
 		<div>
