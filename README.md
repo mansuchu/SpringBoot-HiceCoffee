@@ -19,29 +19,29 @@
 
 </br>
 
-## 2. 사용 기술
+## 2. 개발 환경
+
+Operating System
+- Windows10
 
 Back-end
-
 - Java 11
-- Spring Boot
-- ....
+- Spring Boot (Framework)
+- Apache Tomcat (Server)
 
 Front-end 
-
 - HTML
-
 - CSS
+- JavaScript
 
-- ....
+Database
+- Oracle Database
+
+Development Tools
+- Eclipse
+- Sqldeveloper
+
+Team Collaboration Tool
+- Figma, Whimsical, Staruml, Slack, Notion, GitHub
 
   
-
-## 3. ERD 설계
-
-이미지이미지
-
-## 4. 핵심기능
-
-## 5. 트러블 슈팅
-## 6. 프로젝트 후기
